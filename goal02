@@ -1,0 +1,3 @@
+pokemon_games_ordenado = pokemon_games.sort_values(by="Vendas_Global", ascending=False)
+
+print(pokemon_games_ordenado[["Nome", "Vendas_Global"]])
