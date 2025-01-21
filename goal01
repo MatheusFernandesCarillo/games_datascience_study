@@ -1,15 +1,9 @@
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-import kaggle
-import zipfile
-
-!kaggle datasets download -d rush4ratio/video-game-sales-with-ratings
-with zipfile.ZipFile("video-game-sales-with-ratings.zip", "r") as zip_ref:
-    zip_ref.extractall("dataset-folder")
 
 #export the database file
-games = pd.read_csv("dataset-folder/Video_Games_Sales_as_at_22_Dec_2016.csv")
+games = pd.read_csv("https://github.com/MatheusFernandesCarillo/games_datascience_study/blob/main/Video_Games_Sales_as_at_22_Dec_2016.csv")
 
 #Change the name of the columns to portuguese
 games.columns = ["Nome", "Plataforma", "Lançamento", "Genero", "Publicadora", "Vendas_EUA", "Vendas_Europa", "Vendas_Japão", "Vendas_Outros", "Vendas_Global", "Nota_Critica", "Contagem_Criticos", "Nota_Usuario", "Contagem_Usuarios", "Desenvolvedora", "Classificação"]
@@ -40,5 +34,3 @@ plt.title("Vendas Globais de Jogos Pokémon até 2016", fontsize=16, weight='bol
 plt.legend(title="Plataforma", fontsize=12, title_fontsize=14)
 plt.tight_layout()
 plt.show()
-
-
