@@ -17,6 +17,7 @@ pokemon_games_ordenado = pokemon_games.sort_values(by="Vendas_Global", ascending
 #creating a new column to show the plataform for the hue
 pokemon_games_ordenado["Plataforma"] = pokemon_games_ordenado["Plataforma"].astype(str)
 
+#adjusting the chart to make it easier to understand
 plt.figure(figsize=(16, 8))
 sns.barplot(
     x="Nome",
@@ -25,8 +26,6 @@ sns.barplot(
     data=pokemon_games_ordenado,
     dodge=False 
 )
-
-#adjusting the chart to make it easier to understand
 plt.xticks(rotation=45, ha='right', fontsize=12)
 plt.xlabel("Nome do Jogo", fontsize=14)
 plt.ylabel("Vendas Globais (em milhões)", fontsize=14)
